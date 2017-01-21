@@ -6,7 +6,9 @@
 ES_PORT=9200
 ES_HEALTH_PATH="_cluster/health"
 KOMOREBI_PORT=9400
-KOMOREBI_COMMAND="curl -f -s localhost:$ES_PORT/$ES_HEALTH_PATH | grep -q -E green.*\"active_shards\":[1-9]+"
+KOMOREBI_COMMAND="curl -f -s localhost:$ES_PORT/$ES_HEALTH_PATH | grep -q -E green.*active_shards.:[1-9]+"
+
+echo "cmd: $KOMOREBI_COMMAND"
 
 set -e
 
